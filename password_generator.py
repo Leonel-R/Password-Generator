@@ -2,12 +2,21 @@
 from string import *
 from random import *
 
-def generate_password(length: int):
+def generate_strong_password(length: int,number: bool,special: bool):
     random_pass = ""
+    special_characters = "!?=+-()#"
     for letter in range(length):
-        random_pass += choice(ascii_lowercase)
-    return random_pass
+        if number is True and special is False:
+            random_pass += choice((choice(ascii_letters),choice(digits)))
+            
+        elif number is False and special is True:
+            random_pass += choice((choice(ascii_letters),choice(special_characters)))
+            
+        elif number is True and special is True:
+            random_pass += choice((choice(ascii_letters),choice(special_characters),choice(digits)))
+            
+        else:
+            random_pass += choice(ascii_letters)
+    print(random_pass)
 
-if __name__ == "__main__":
-    for i in range(10):
-        print(generate_password(2))
+generate_strong_password(10,True,True)
