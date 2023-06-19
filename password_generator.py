@@ -32,7 +32,4 @@ if bool2 == "y":
 else:
     special = False
 
-
-
-
 generate_strong_password(length,number,special)
