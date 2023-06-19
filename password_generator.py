@@ -19,4 +19,20 @@ def generate_strong_password(length: int,number: bool,special: bool):
             random_pass += choice(ascii_letters)
     print(random_pass)
 
-generate_strong_password(10,True,True)
+length = int(input("Please input the desired length of password:"))
+bool1 = input("Do you want numbers in your password(y/n):")
+if bool1 == "y":
+    number = True
+else:
+    number = False
+
+bool2 = input("Do you want special characters in your password(y/n):")
+if bool2 == "y":
+    special = True
+else:
+    special = False
+
+
+
+
+generate_strong_password(length,number,special)
